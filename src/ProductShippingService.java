@@ -3,7 +3,7 @@ import java.util.List;
 
 public class ProductShippingService implements ShippingService {
     List<CartItem> cartItems;
-    private final double BASE_SHIPPING_FEE = 10;
+    private final double BASE_SHIPPING_FEE = 2;
     public ProductShippingService(List<CartItem> cartItems) {
         this.cartItems = cartItems;
     }
@@ -13,9 +13,9 @@ public class ProductShippingService implements ShippingService {
         System.out.println("** Shipment Notice **");
         double totalWeight = 0;
         for (CartItem item : getShippableItems()) {
-            if (item instanceof Shippable) {
-                totalWeight += ((Shippable) item).getWeight() * item.getQuantity();
-                System.out.println(item.getQuantity() + "x " + item.getProduct().getName() + "\t" + ((Shippable) item).getWeight() * item.getQuantity() + "g");
+            if (item.getProduct() instanceof Shippable) {
+                totalWeight += ((Shippable) item.getProduct()).getWeight() * item.getQuantity();
+                System.out.println(item.getQuantity() + "x " + item.getProduct().getName() + "\t" + ((Shippable) item.getProduct()).getWeight() * item.getQuantity() + "g");
             }
         }
         if ((int)totalWeight > 0) {
@@ -30,7 +30,7 @@ public class ProductShippingService implements ShippingService {
     public double calculateShippingFees() {
         double shippingFees = 0;
         for (CartItem item : getShippableItems()) {
-            shippingFees += BASE_SHIPPING_FEE * item.getQuantity() * ((Shippable)item.getProduct()).getWeight();
+            shippingFees += BASE_SHIPPING_FEE * item.getQuantity();
         }
         return shippingFees;
     }

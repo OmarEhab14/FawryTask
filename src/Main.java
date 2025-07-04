@@ -3,11 +3,16 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         try {
-            Customer customer = new Customer("John", 20000);
+            Customer customer = new Customer("Omar", 20000);
             Cart cart = new Cart();
-            cart.add(new CartItem(new ExpirableShippableProduct("Cheese", 5.99, 10,
-                    LocalDate.of(2025, 8, 9), 5),2));
-            cart.add(new CartItem(new ShippableProduct("TV", 499.99, 5, 30), 1));
+            Product cheese = new ExpirableShippableProduct("Cheese", 5.99, 10,
+                    LocalDate.of(2025, 8, 9), 5);
+            CartItem cheeseItem = new CartItem(cheese, 2);
+            cart.add(cheeseItem);
+
+            Product tv = new ShippableProduct("TV", 499.99, 5, 8000);
+            CartItem tvItem = new CartItem(tv, 1);
+            cart.add(tvItem);
 
             ShippingService shippingService = new ProductShippingService(cart.getItems());
             Checkout checkout = new Checkout(customer, shippingService);

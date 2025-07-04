@@ -73,7 +73,6 @@ public class Checkout {
         System.out.println("Subtotal\t" + String.format("%.2f", subtotal));
         System.out.println("Shipping\t" + String.format("%.2f", shippingFees));
         System.out.println("Total\t\t" + String.format("%.2f", total));
-        System.out.println("Remaining Balance: " + String.format("%.2f", customer.getBalance()));
         System.out.println("END.");
     }
 }
