@@ -1,3 +1,5 @@
+package models;
+
 public abstract class Product {
     protected String name;
     protected double price;
@@ -7,14 +9,14 @@ public abstract class Product {
         this.price = price;
         this.quantity = quantity;
     }
-    abstract String getName();
-    double getPrice() {
+    public abstract String getName();
+    public double getPrice() {
         return this.price;
     }
-    int getQuantity() {
+    public int getQuantity() {
         return this.quantity;
     }
-    void reduceQuantity(int quantity) {
+    public void reduceQuantity(int quantity) {
         this.quantity -= quantity;
     }
 }

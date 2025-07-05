@@ -1,6 +1,10 @@
+package models;
+
+import interfaces.Expirable;
+
 import java.time.LocalDate;
 
-public class ExpirableProduct extends Product implements Expirable{
+public class ExpirableProduct extends Product implements Expirable {
     LocalDate expiryDate;
 
     public ExpirableProduct(String name, double price, int quantity, LocalDate expiryDate) {
@@ -19,7 +23,7 @@ public class ExpirableProduct extends Product implements Expirable{
     }
 
     @Override
-    String getName() {
+    public String getName() {
         return this.name;
     }
 }

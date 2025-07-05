@@ -1,3 +1,9 @@
+package services;
+
+import interfaces.Shippable;
+import interfaces.ShippingService;
+import models.CartItem;
+
 import java.util.ArrayList;
 import java.util.List;
 

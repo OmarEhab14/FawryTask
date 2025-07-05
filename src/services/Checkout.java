@@ -1,5 +1,11 @@
-import java.util.ArrayList;
-import java.util.List;
+package services;
+
+import interfaces.Expirable;
+import interfaces.ShippingService;
+import models.Cart;
+import models.CartItem;
+import models.Customer;
+import models.Product;
 
 public class Checkout {
     private final Customer customer;
@@ -62,7 +68,7 @@ public class Checkout {
     }
 
     private void printReceipt(Cart cart, double subtotal, double shippingFees, double total) {
-        System.out.println("** Checkout Receipt **");
+        System.out.println("** services.Checkout Receipt **");
 
         for (CartItem item : cart.getItems()) {
             Product product = item.getProduct();

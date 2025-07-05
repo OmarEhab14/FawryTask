@@ -1,3 +1,8 @@
+import interfaces.ShippingService;
+import models.*;
+import services.Checkout;
+import services.ProductShippingService;
+
 import java.time.LocalDate;
 
 public class Main {
