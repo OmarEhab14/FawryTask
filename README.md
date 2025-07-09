@@ -5,6 +5,14 @@
 
 A clean Java implementation of an e-commerce system fulfilling Fawry's internship requirements.
 
+## 🖼️ Demo Screenshots
+
+Here is a screenshot of the project running in the terminal:
+
+### 🧪 Application Run Output
+
+![Output](Screenshot1.png)
+
 ## 🏗️ Project Structure
 ```
 src/
