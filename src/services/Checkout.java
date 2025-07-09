@@ -68,7 +68,7 @@ public class Checkout {
     }
 
     private void printReceipt(Cart cart, double subtotal, double shippingFees, double total) {
-        System.out.println("** services.Checkout Receipt **");
+        System.out.println("** Checkout Receipt **");
 
         for (CartItem item : cart.getItems()) {
             Product product = item.getProduct();
